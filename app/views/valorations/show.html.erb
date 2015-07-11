@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Valorated user:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Hability:</strong>
+  <%= @valoration.hability.name %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @valoration.points %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @valoration.date%>
+</p>
+
+<%= link_to 'Edit', edit_user_valoration_path(@user,@valoration) %>
+<%= link_to 'Back', user_valorations_path %>

@@ -1,0 +1,14 @@
+<p><id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>Telephone:</strong>
+  <%= @user.telephone %>
+</p>
+<%= link_to 'View valorations on this user', user_valorations_path(@user)%>
+<%= link_to 'Valorate user:',new_user_valoration_path(@user)%>
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Back', users_path %>
