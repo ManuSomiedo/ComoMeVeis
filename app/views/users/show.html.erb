@@ -1,14 +1,31 @@
-<p><id="notice"><%= notice %></p>
-
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
 <p>
-  <strong>Name:</strong>
-  <%= @user.name %>
+  <h3><strong>Telephone: &nbsp</strong><%= @user.telephone %></h3>
+  <h3><strong>E-mail: &nbsp</strong><%= @user.email%></h3></br>
 </p>
-<p>
-  <strong>Telephone:</strong>
-  <%= @user.telephone %>
-</p>
-<%= link_to 'View valorations on this user', user_valorations_path(@user)%>
-<%= link_to 'Valorate user:',new_user_valoration_path(@user)%>
-<%= link_to 'Edit', edit_user_path(@user) %>
-<%= link_to 'Back', users_path %>
+ <h3>Valoraions on <%=@user.name%>:</h3>
+<table>
+  <thead>
+    <th><h4>Valorated hability &nbsp    &nbsp</h4></th>
+    <th><h4>Points</h4></th>
+  <thead>
+  <tbody>
+      <% @user.valorations.each do |valoration|%>
+        <td><h5><%=valoration.hability.name%></h5></td>
+        <td><h5><%=valoration.points%></h5></td>
+      <%end%>
+  </tbody>
+</table>
+<br>
+<br>
+<%= link_to 'Valorate user:',new_user_valoration_path(@user)%><br>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711142352) do
+ActiveRecord::Schema.define(version: 20150712144356) do
 
   create_table "habilities", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150711142352) do
     t.datetime "avatar_updated_at"
     t.string   "email",               limit: 255
     t.boolean  "logged_in"
+    t.string   "remember_digest",     limit: 255
   end
 
   create_table "valorations", force: :cascade do |t|
