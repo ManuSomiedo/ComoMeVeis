@@ -30,7 +30,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        @user.log_in
+        log_in @user
+        flash[:success] = "Welcome abroard!"
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -76,4 +77,10 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :password, :password_confirmation, :telephone, :email)
     end
+    
+    def remember
+      self.remember_token = User.new_token
+      update_attribute(:remember_digest, User.digest(remember_token))
+    end
+
 end
