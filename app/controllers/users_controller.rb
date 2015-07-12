@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+
   end
 
   # GET /users/new
@@ -61,19 +62,6 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def self.authenticate(email, password)
-    if user = find_by_telephone(telephone)
-      # Then compare the provided password against the hashed one in the db.
-      if BCrypt::Password.new(user.hashed_password).is_password? password
-        # If they match we return the user
-        return user
-      end
-    end
-    # If we get here it means either there's no user with that email, or the wrong
-    # password was provided.  But we don't want to let an attacker know which.
-    return nil
-   end
 
 
    private
