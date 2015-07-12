@@ -11,17 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711174222) do
+ActiveRecord::Schema.define(version: 20150711142352) do
 
   create_table "habilities", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-  end
-
-  create_table "sessions", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,10 +31,7 @@ ActiveRecord::Schema.define(version: 20150711174222) do
     t.datetime "avatar_updated_at"
     t.string   "email",               limit: 255
     t.boolean  "logged_in"
-    t.integer  "session_id",          limit: 4
   end
-
-  add_index "users", ["session_id"], name: "index_users_on_session_id", using: :btree
 
   create_table "valorations", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
@@ -53,7 +45,6 @@ ActiveRecord::Schema.define(version: 20150711174222) do
   add_index "valorations", ["hability_id"], name: "index_valorations_on_hability_id", using: :btree
   add_index "valorations", ["user_id"], name: "index_valorations_on_user_id", using: :btree
 
-  add_foreign_key "users", "sessions"
   add_foreign_key "valorations", "habilities"
   add_foreign_key "valorations", "users"
 end
