@@ -46,9 +46,4 @@ group :development, :test do
 
   gem 'bootstrap-sass', '~> 3.2.0'
   gem 'autoprefixer-rails'
-
-  group :production do
-    gem 'pg',             '0.17.1'
-    gem 'rails_12factor', '0.0.2'
-  end
 end
