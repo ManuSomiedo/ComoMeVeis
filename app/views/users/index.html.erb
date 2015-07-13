@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th> Name  </th>
-      <th> Telephone  </th>
+      <th><h4> Name &nbsp&nbsp&nbsp&nbsp </h4></th>
+      <th><h4> Telephone  </h4></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,16 +16,9 @@
       <tr>
         <td><%= user.name %> &nbsp</td>
         <td><%= user.telephone %></td>
-        <td><%= link_to 'Show', user %>&nbsp</td>
+        <td><%= link_to 'View profile', user %>&nbsp</td>
+        <td><%= link_to 'Valorate user', new_user_valoration_path(user)%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-<p>
-  <%= link_to 'New User', new_user_path %>
-</p>
-<p>
-  <%= link_to 'Back', master_index_path %>
-</p>

@@ -1,3 +1,4 @@
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   attr_accessor :remember_token
@@ -6,7 +7,6 @@ class User < ActiveRecord::Base
   validates :telephone, uniqueness: true, presence: true, numericality: { only_integer: true }, presence: true, length: { minimum: 9, maximum: 9 }
   validates :name, presence: true, length: { minimum: 4, maximum: 30 }, format: { with: /^[\w\s-]*/u, multiline: true,
                                                                                   message: 'only allows letters'}
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
   end
 
   def authenticated?(remember_token)
+    return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+  def forget
+    update_attribute(:remember_digest, nil)
   end
 end
