@@ -4,7 +4,7 @@ class CreateValorations < ActiveRecord::Migration
       t.references :user, index: true, foreign_key: true
       t.references :hability, index: true, foreign_key: true
       t.integer :points
-      t.datetime :date
+      t.timestamps :date
 
       t.timestamps null: false
     end
