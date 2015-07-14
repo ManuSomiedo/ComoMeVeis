@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.where.not(id: current_user.id)
   end
 
   # GET /users/1
@@ -77,7 +77,7 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :password, :password_confirmation, :telephone, :email)
     end
-    
+
     def remember
       self.remember_token = User.new_token
       update_attribute(:remember_digest, User.digest(remember_token))
