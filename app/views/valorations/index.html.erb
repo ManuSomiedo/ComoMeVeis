@@ -19,7 +19,7 @@
         <td><%= valoration.user.name %></td>
         <td><%= valoration.hability.name %></td>
         <td><%= valoration.points %></td>
-        <td><%= valoration.date %></td>
+        <td><%= valoration.created_at %></td>
         <td><%= link_to 'Show', [@user,valoration] %></td>
         <td><%= link_to 'Edit', edit_user_valoration_path(@user,valoration) %></td>
         <td><%= link_to 'Destroy', [@user,valoration], method: :delete, data: { confirm: 'Are you sure?' } %></td>

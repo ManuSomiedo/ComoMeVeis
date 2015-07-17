@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712144356) do
+ActiveRecord::Schema.define(version: 20150716124839) do
 
   create_table "habilities", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150712144356) do
     t.integer  "points",      limit: 4
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "sender_id",   limit: 4
   end
 
   add_index "valorations", ["hability_id"], name: "index_valorations_on_hability_id", using: :btree

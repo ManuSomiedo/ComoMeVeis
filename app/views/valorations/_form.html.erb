@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <h2>You're currently evaluating the user :<%=@user.name%></h2>
+  <h2>You're currently evaluating the user: &nbsp<%=@user.name%></h2>
   <div class="field">
     <%= f.label :"Hability name:" %><br>
     <%= f.select :hability_id, Hability.all.collect { |h| [ h.name, h.id ] }, selected: 1%>
@@ -20,7 +20,9 @@
     <%= f.label :points %><br>
     <%= f.number_field :points %>
   </div>
-  <%= f.hidden_field(:date, value: Time.now)%>
+  <% f.hidden_field(:created_at, value: Time.now)%>
+  <p>USER:<%= current_user.id%></p>
+
   <div class="actions">
     <%= f.submit %>
   </div>

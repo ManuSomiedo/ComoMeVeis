@@ -1,30 +1,27 @@
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+    	 <div class="well profile">
+            <div class="col-sm-12">
+                <div class="col-xs-12 col-sm-8">
+                    <h2><%=@user.name%></h2>
+                    <p><strong>E-mail: </strong> <%=@user.email%></p>
+                    <p><strong>Telephone: </strong><%=@user.telephone%></p>
+                    <p><strong>Join date: </strong><%=@user.created_at.to_formatted_s(:long)%>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-4 text-center">
+                    <figure>
+                        <%=gravatar_for @user%>
+                        <figcaption class="Foto">
+                            <p>Gravatar</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+    	 </div>
+		</div>
+	</div>
 </div>
-<p>
-  <h3><strong>Telephone: &nbsp</strong><%= @user.telephone %></h3>
-  <h3><strong>E-mail: &nbsp</strong><%= @user.email%></h3></br>
-</p>
- <h3>Valoraions on <%=@user.name%>:</h3>
-<table>
-  <thead>
-    <th><h4>Valorated hability &nbsp    &nbsp</h4></th>
-    <th><h4>Points</h4></th>
-  <thead>
-  <tbody>
-      <% @user.valorations.each do |valoration|%>
-        <td><h5><%=valoration.hability.name%></h5></td>
-        <td><h5><%=valoration.points%></h5></td>
-      <%end%>
-  </tbody>
-</table>
-<br>
-<br>

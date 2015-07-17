@@ -4,11 +4,23 @@
 /*    --------------------------------------------------
 	:: Login Section
 	-------------------------------------------------- */
+.login-section
+{
+  background-image: none !important;
+  background-color: #e9e9e9 !important;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 13px 16px 5px 0px rgba(110,110,110,0.4);
+}
 #login {
-    padding-top: 50px
+    padding-top: 50px;
+}
+#login .login
+{
+  width: auto;
 }
 #login .form-wrap {
-    width: 30%;
+    width: 40%;
     margin: 0 auto;
 }
 #login h1 {
@@ -25,6 +37,12 @@
 #login .btn.btn-custom {
     font-size: 14px;
 	margin-bottom: 20px;
+}
+#login .btn.btn-custom:hover
+{
+  text-decoration: none !important;
+  background: #269c55 !important;
+
 }
 #login .forget {
     font-size: 13px;
@@ -46,6 +64,11 @@
 .btn-custom {
     color: #fff;
 	background-color: #5677fc;
+}
+.register .btn-custom
+{
+  color: #fff;
+  background-color:#e51c23;
 }
 .btn-custom:hover,
 .btn-custom:focus {

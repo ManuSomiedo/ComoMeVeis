@@ -3,8 +3,8 @@
 <section id="login">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <div class="form-wrap">
+      <div class="col-xs-6 col-xs-offset-3">
+        <div class="login-section">
           <%= form_for(:session, url: login_path) do |f| %>
           <h1>Log in with your telephone and password</h1>
           <div class="form-group">
@@ -23,16 +23,19 @@
                 <span></span>
               </label>
               <label class="[ btn btn-default active ]" for="fancy-checkbox-primary">
-                Primary Checkbox
+                Remember me on this browser
               </label>
             </div>
           </div>
           <%=f.submit "Log in",class:"btn-login",class:"btn btn-custom btn-lg btn-block" %>
         </form>
         <%end%>
-
+        <div class ="register">
+          <%= link_to '<button type="button" class="btn btn-custom btn-lg btn-block">New user? Register now!</button>'.html_safe, new_user_path %>
       </div>
     </div>
+    <!--! /.login-section-->
+      </div>
 <!-- /.col-xs-12 -->
   </div>
 <!-- /.row -->

@@ -56,7 +56,10 @@ nav .btn-primary
 {
   background: #e51c23 !important;
 }
-
+.error-alert
+{
+  margin-top:30px;
+}
 .dropdown li a
 {
   color:#000000 !important;
@@ -66,9 +69,7 @@ body {
   padding-top: 60px;
 }
 
-section {
-  overflow: auto;
-}
+
 
 @media (max-width: 800px)
 {
