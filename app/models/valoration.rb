@@ -4,6 +4,4 @@ class Valoration < ActiveRecord::Base
   belongs_to :user
   belongs_to :hability
 
-
-
 end

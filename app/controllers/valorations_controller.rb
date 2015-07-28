@@ -17,12 +17,19 @@ class ValorationsController < ApplicationController
 
   # GET /valorations/new
   def new
+    @habilities = Hability.all
     @valoration = Valoration.new
+    @valoration1 = Valoration.new
+    @valoration2 = Valoration.new
+    @valoration3 = Valoration.new
+    @valoration4 = Valoration.new
+    @valoration5 = Valoration.new
 
   end
 
   # GET /valorations/1/edit
   def edit
+    @habilities = Hability.all
   end
 
   # POST /valorations
@@ -80,6 +87,6 @@ class ValorationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def valoration_params
-      params.require(:valoration).permit(:user_id, :hability_id, :points, :created_at)
+      params.require(:valoration).permit(:user_id, :hability_id, :points, :created_at, :sender_id)
     end
 end

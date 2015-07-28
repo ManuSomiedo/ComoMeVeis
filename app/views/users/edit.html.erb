@@ -1,14 +1,17 @@
-<h1>Editing User</h1>
 
 <section id="edit-profile">
   <div class="container">
     <row>
+      <div class="gravatar_edit">
+        <div class="col-xs-6 col-xs-offset-3">
+        <%= gravatar_for @user %>
+        <h4>Change your avatar:<h4>
+        <a href="http://gravatar.com/emails" target="_blank">Edit</a>
+      </div>
+    </row>
+    <row>
       <div class="col-xs-6 col-xs-offset-3">
-        <div class="gravatar_edit">
-          <%= gravatar_for @user %>
-          <h4>Change your avatar:<h4>
-          <a href="http://gravatar.com/emails" target="_blank">Edit</a>
-        </div>
+        <h2 >Edit yor profile:</h2>
 
         <%= render 'form' %>
 
@@ -17,4 +20,5 @@
       </div>
     </row>
   </div>
+</div>
 </section>

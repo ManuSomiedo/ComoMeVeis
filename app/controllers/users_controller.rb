@@ -11,7 +11,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-
+    @miniatures = Array.new
+    @miniatures = ["glyphicon glyphicon-th-large","glyphicon glyphicon-home"]
+    @valorations = Valoration.all.where(user_id: current_user.id)
+    @habilities = Hability.all
   end
 
   # GET /users/new
